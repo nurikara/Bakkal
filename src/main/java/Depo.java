@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Depo implements Methodlar {
+public class Depo  {
 
-     static  List<Urunler> urunArray= new ArrayList<>();
-    public void urunLisi(){
+  private  List<Urunler> urunArray= new ArrayList<>();
+    public  Depo(){
 
         Urunler urun1 = new Urunler("Gofret",22);
         Urunler urun2 = new Urunler("Biskuvi",15);
@@ -21,8 +21,10 @@ public class Depo implements Methodlar {
     }
 
 
-    @Override
-    public void urunListeOlustur() {
+    public void urunListesi(){
 
-    }
-}
+        for (Urunler w:this.urunArray){
+            System.out.println(w.getIsim()+" "+"Fiyati = "+ w.getFiyati()+" "+"idNo = "+w.getUrunId());
+            System.out.println();
+        }
+}}

@@ -7,6 +7,7 @@ public class Bakkal extends Islemler {
     }
 
     public static void start() {
+        Depo d1 = new Depo();
 
         Scanner input = new Scanner(System.in);
 
@@ -14,14 +15,16 @@ public class Bakkal extends Islemler {
 
         do {
 
-            System.out.println("Urun listelemek icin 1 \n Urun secmek icin 2 " +
+            System.out.println(" Urun listelemek icin 1 \n Urun secmek icin 2 " +
                     "\n Odeme yapmak icin 3 \n Cikis yapmak icin 0 ");
+            System.out.println();
 
-            secim=input.nextInt();
+            secim = input.nextInt();
 
             switch (secim) {
 
-                case 1://UrunListesi
+                case 1:
+                    d1.urunListesi();
                     break;
 
                 case 2: //UrunSecme()
@@ -34,7 +37,7 @@ public class Bakkal extends Islemler {
                 default:
                     System.out.println("Hatali giris yaptiniz tekrar deneyiniz.");
             }
-        } while (secim!=0);
+        } while (secim != 0);
 
     }
 }
