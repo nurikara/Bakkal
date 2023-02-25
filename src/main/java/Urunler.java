@@ -5,13 +5,16 @@ public class Urunler {
    private double fiyati;
    private int urunId;
 
+   private int  urunAdedi;
 
 
-    public Urunler(String isim, double fiyati) {
+
+    public Urunler(String isim, double fiyati,int urunAdedi) {
 
         count++;
         this.isim = isim;
         this.fiyati = fiyati;
+        this.urunAdedi=urunAdedi;
         this.urunId=count;
     }
 
@@ -25,5 +28,9 @@ public class Urunler {
 
     public int getUrunId() {
         return urunId;
+    }
+
+    public int getUrunAdedi() {
+        return urunAdedi;
     }
 }

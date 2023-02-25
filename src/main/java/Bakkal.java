@@ -27,7 +27,7 @@ public class Bakkal extends Islemler {
                     d1.urunListesi();
                     break;
 
-                case 2: //UrunSecme()
+                case 2: d1.urunSecme();
                     break;
                 case 3: //OdemeYapma()
                     break;
@@ -36,6 +36,8 @@ public class Bakkal extends Islemler {
                     break;
                 default:
                     System.out.println("Hatali giris yaptiniz tekrar deneyiniz.");
+
+                    System.out.println();
             }
         } while (secim != 0);
 
