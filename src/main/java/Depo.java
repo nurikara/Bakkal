@@ -27,12 +27,12 @@ public class Depo {
     public void urunListesi() {
 
         for (Urunler w : this.urunArray) {
-            System.out.println(w.getIsim() + " / " + "Fiyati = " + w.getFiyati() + " / " + "idNo = " + w.getUrunId()+"  / Stok Adedi  "+w.getUrunAdedi());
+            System.out.println(w.getIsim() + " / " + "Fiyati = " + w.getFiyati() + " / " + "idNo = " + w.getUrunId() + "  / Stok Adedi  " + w.getUrunAdedi());
             System.out.println();
         }
     }
 
-    public  void urunSecme() {
+    public void urunSecme() {
         Scanner input = new Scanner(System.in);
         int secim;
         do {
@@ -40,32 +40,31 @@ public class Depo {
             System.out.println("Cikmak icin O a basiniz");
             secim = input.nextInt();
 
-            for (Urunler w: this.urunArray ) {
+            for (Urunler w : this.urunArray) {
 
-               if(w.getUrunAdedi()==0){
-                   System.out.println( w.getIsim()+" urun stoklarimizda tukenmistir");
-                   continue;
-               }
-               if(secim == w.getUrunId()){
-                     w.setUrunAdedi(w.getUrunAdedi()-1);
-                     sepet.add(w);
+                if (w.getUrunAdedi() == 0) {
+                    System.out.println(w.getIsim() + " urun stoklarimizda tukenmistir");
+                    continue;
+                } else if (secim == w.getUrunId()) {
+                    w.setUrunAdedi(w.getUrunAdedi() - 1);
+                    sepet.add(w);
 
-                     sepetYazdirma();
+                    sepetYazdirma();
 
-               }
+                }
             }
 
 
-        } while (secim!=0);
+        } while (secim != 0);
 
         System.out.println("---Sepetinizdeki Urunler---");
 
         sepetYazdirma();
-        System.out.println("-----Devam Etmek Icin Secimizi Yapini-----");
+        // System.out.println("-----Devam Etmek Icin Secimizi Yapini-----");
 
     }
 
-    public  void sepetYazdirma() {
+    public void sepetYazdirma() {
         for (Urunler w : this.sepet) {
             //System.out.println("---Sepetinizdeki Urunler---");
             System.out.println(w.getIsim() + " " + "Fiyati = " + w.getFiyati() + " " + "idNo = " + w.getUrunId());
@@ -75,8 +74,17 @@ public class Depo {
 
     }
 
+    public void odemeHesaplama() {
+        int toplamOdenecek = 0;
 
+        for (Urunler w : this.sepet) {
+            toplamOdenecek += w.getFiyati();
 
+            //System.out.println();
+        }
+
+        System.out.println(" Toplam Odenecek Tutar " + toplamOdenecek);
+    }
 
 
 }
