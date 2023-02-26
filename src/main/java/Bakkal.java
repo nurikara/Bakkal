@@ -14,9 +14,9 @@ public class Bakkal extends Islemler {
         int secim;
 
         do {
-
+            System.out.println("-----Devam Etmek Icin Secimizi Yapini-----");
             System.out.println(" Urun listelemek icin 1 \n Urun secmek icin 2 " +
-                    "\n Odeme yapmak icin 3 \n Cikis yapmak icin 0 ");
+                    " \n Odeme ve Cikis  icin 0 ");
             System.out.println();
 
             secim = input.nextInt();
@@ -29,11 +29,11 @@ public class Bakkal extends Islemler {
 
                 case 2: d1.urunSecme();
                     break;
-                case 3: //OdemeYapma()
+                case 0:
+
+                    System.out.println("Tekrar bekleriz...");//OdemeYapma()
                     break;
-                case 0: //Cikis()
-                    System.out.println("Tekrar bekleriz...");
-                    break;
+
                 default:
                     System.out.println("Hatali giris yaptiniz tekrar deneyiniz.");
 

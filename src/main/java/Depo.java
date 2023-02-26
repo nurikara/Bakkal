@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Depo {
 
     private List<Urunler> urunArray = new ArrayList<>();
-    private List<Urunler> sepet = new ArrayList<>();
+    public List<Urunler> sepet = new ArrayList<>();
 
     public Depo() {
 
@@ -27,7 +27,7 @@ public class Depo {
     public void urunListesi() {
 
         for (Urunler w : this.urunArray) {
-            System.out.println(w.getIsim() + " " + "Fiyati = " + w.getFiyati() + " " + "idNo = " + w.getUrunId());
+            System.out.println(w.getIsim() + " / " + "Fiyati = " + w.getFiyati() + " / " + "idNo = " + w.getUrunId()+"  / Stok Adedi  "+w.getUrunAdedi());
             System.out.println();
         }
     }
@@ -42,12 +42,17 @@ public class Depo {
 
             for (Urunler w: this.urunArray ) {
 
-                if(secim == w.getUrunId()){
+               if(w.getUrunAdedi()==0){
+                   System.out.println( w.getIsim()+" urun stoklarimizda tukenmistir");
+                   continue;
+               }
+               if(secim == w.getUrunId()){
+                     w.setUrunAdedi(w.getUrunAdedi()-1);
+                     sepet.add(w);
 
-                    sepet.add(w);
+                     sepetYazdirma();
 
-                }
-
+               }
             }
 
 
@@ -55,13 +60,23 @@ public class Depo {
 
         System.out.println("---Sepetinizdeki Urunler---");
 
+        sepetYazdirma();
+        System.out.println("-----Devam Etmek Icin Secimizi Yapini-----");
+
+    }
+
+    public  void sepetYazdirma() {
         for (Urunler w : this.sepet) {
+            //System.out.println("---Sepetinizdeki Urunler---");
             System.out.println(w.getIsim() + " " + "Fiyati = " + w.getFiyati() + " " + "idNo = " + w.getUrunId());
             System.out.println();
         }
-        System.out.println("-----Bizi tercih Ettiginiz icin tesekkur ederiz yine bekleriz-----");
+
 
     }
+
+
+
 
 
 }

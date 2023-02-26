@@ -33,4 +33,8 @@ public class Urunler {
     public int getUrunAdedi() {
         return urunAdedi;
     }
+
+    public void setUrunAdedi(int urunAdedi) {
+        this.urunAdedi = urunAdedi;
+    }
 }
